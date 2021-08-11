@@ -21,7 +21,7 @@ class Nav extends React.Component {
             <li className="navitem d-flex">
               <Link href="/">
                 <a className="navbar-brand">
-                  <img className="logo" src="/static/logo.svg" />
+                  <img style={{ width: 300}} className="logo" src="/static/lobbycall.jpeg" />
                 </a>
               </Link>
             </li>

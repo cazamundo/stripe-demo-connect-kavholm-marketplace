@@ -10,11 +10,11 @@ class ListingForm extends Component {
     super(props);
 
     this.state = {
-      title: 'Breezy cabana in Baja California',
-      description: 'Breezy cabana in Baja California',
+      title: 'Radisson Hotel Suite in Brussels',
+      description: 'The invoice details should come here.',
       price: 10000,
-      location: 'United States',
-      currency: 'USD',
+      location: 'Belgium',
+      currency: 'EUR',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -35,7 +35,10 @@ class ListingForm extends Component {
     event.preventDefault();
 
     try {
-      let req = await API.makeRequest('post', `/api/listings/new`, this.state);
+      await API.makeRequest('post', `/api/listings/new`, {
+        ...this.state,
+        ...this.state.price ? {price: Number(this.state.price.toString().replace(",", ".")) * 100} : {}
+      });
       return redirect('/dashboard/host');
     } catch (err) {
       logger.log('Signup failed.', err);
@@ -54,7 +57,7 @@ class ListingForm extends Component {
                 type="text"
                 id="title"
                 name="title"
-                placeholder="Breezy cabana in Baja California"
+                placeholder="Radisson Hotel Suite in Brussels"
                 value={this.state.title}
                 onChange={this.handleChange}
               />
@@ -66,14 +69,14 @@ class ListingForm extends Component {
                 className="form-control"
                 id="description"
                 name="description"
-                placeholder="Breezy cabana in Baja California"
+                placeholder="Radisson Hotel Suite in Brussels"
                 value={this.state.description}
                 onChange={this.handleChange}
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="price">Price per night (in cents)</label>
+              <label htmlFor="price">Invoice price</label>
               <input
                 className="form-control"
                 type="text"

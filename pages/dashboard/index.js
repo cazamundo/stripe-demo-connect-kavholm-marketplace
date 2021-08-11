@@ -67,16 +67,16 @@ class Dashboard extends React.Component {
               <div className="row">
                 <div className="col-8">
                   <div className="clearfix">
-                    <h4>Your trips</h4>
+                    <h4>Suppliers paid</h4>
                   </div>
                 </div>
                 <div className="col-4">
                   <NewButton
                     showTip={showTip}
-                    label="Show homes"
+                    label="Show suppliers to pay"
                     link="/listings"
-                    tipTitle="No trips booked yet?"
-                    tipBody="Explore the homes in Kavholm's marketplace"
+                    tipTitle="No suppliers paid yet?"
+                    tipBody="Explore the suppliers to pay in Lobbycall's overview"
                   />
                 </div>
               </div>

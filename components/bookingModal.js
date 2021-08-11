@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 
 import BookingConfirmedModal from './bookingConfirmedModal';
 import BookingPayment from './bookingPayment';
+import BookingPaymentByWireTransfer from './bookingPaymentByWireTransfer';
 import NumberFormat from 'react-number-format';
 
 Modal.setAppElement('.app');
@@ -15,7 +16,7 @@ class BookingModal extends Component {
   }
 
   render() {
-    let {isShown, toggleModal, isBookingConfirmed} = this.props;
+    let {isShown, bookingType, toggleModal, isBookingConfirmed} = this.props;
 
     var style = {
       base: {
@@ -68,17 +69,26 @@ class BookingModal extends Component {
                   thousandSeparator={true}
                   prefix={this.props.listing.price.currency + ' '}
                 />{' '}
-                to buy
               </h1>
 
               <br />
               <br />
 
+              {bookingType === 'card' && 
               <BookingPayment
                 stripe={this.props.stripe}
                 listing={this.props.listing}
                 onBookingConfirmed={this.props.onBookingConfirmed}
               />
+            }
+              {bookingType === 'transfer' && 
+              <BookingPaymentByWireTransfer
+                stripe={this.props.stripe}
+                listing={this.props.listing}
+                onBookingConfirmed={this.props.onBookingConfirmed}
+              />
+            
+            }
             </div>
           )}
 

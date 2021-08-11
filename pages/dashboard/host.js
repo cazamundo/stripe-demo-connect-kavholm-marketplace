@@ -61,13 +61,13 @@ class Dashboard extends React.Component {
                 <div className="row">
                   <div className="col-8">
                     <div className="clearfix">
-                      <h4>Your listings</h4>
+                      <h4>My payment requests</h4>
                     </div>
                   </div>
                   <div className="col-4">
                     <NewButton
                       showTip={showListingTip}
-                      label="New listing"
+                      label="New payment request"
                       link="/listings/new"
                       tipTitle="Time to create your first listing."
                       tipBody="You can now add your home to Kavholm"

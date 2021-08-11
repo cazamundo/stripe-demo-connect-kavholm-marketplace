@@ -39,6 +39,7 @@ class BookingSearchForm extends Component {
         }
       >
         <select className="search dropdown-toggle">
+          <option value="" disabled selected hidden>Please Choose...</option>
           <option>Canada</option>
           <option>Denmark</option>
           <option>France</option>
@@ -51,7 +52,7 @@ class BookingSearchForm extends Component {
           <option>USA</option>
         </select>
 
-        <div className="row">
+        {/* <div className="row">
           <div className="col-6">
             <DatePicker
               selected={this.state.startDate}
@@ -77,7 +78,7 @@ class BookingSearchForm extends Component {
           <option>6</option>
           <option>7</option>
           <option>8</option>
-        </select>
+        </select> */}
 
         <style jsx>{`
           .booking-search-form input {

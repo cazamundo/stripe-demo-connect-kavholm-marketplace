@@ -14,39 +14,59 @@ class Home extends React.Component {
         <div className="home">
           <div className="splash-image">
             <div className="container">
+              <div className="popover-wrapper">
               <div className="popover">
-                <h1>Book unique places to stay around the globe</h1>
+                {
+                  !this.props.isAuthenticated ? (
+                    <>
+                    <h1>Handle payments, the easy way</h1>
+                    <Link href="/login">
+                      <button className="btn btn-primary btn-book">
+                        Sign in to continue
+                      </button>
+                    </Link></>
+                  ) : <>
+                  <h1>Pay suppliers in your network</h1>
+                    {/* <HomeSearchForm size="large" /> */}
 
-                <HomeSearchForm size="large" />
-
-                <div className="button-container">
-                  <Link href="/listings">
-                    <a className="btn btn-primary">Show listings</a>
-                  </Link>
-                </div>
+                    <div className="button-container">
+                      <Link href="/listings">
+                        <a className="btn btn-primary">Show invoices</a>
+                      </Link>
+                    </div>
+                  </>
+                }
+                
               </div>
+              {this.props.isAuthenticated && (
+                <div className="popover">
+                   <>
+                  <h1>Get paid easy</h1>
+
+                    <div className="button-container">
+                      <Link href="/dashboard">
+                        <a className="btn btn-primary">Go to dashboard</a>
+                      </Link>
+                    </div>
+                  </>
+                </div>
+              )
+              }
+            </div>
             </div>
           </div>
 
           <div className="annotation">
             <p>
               <img src="static/stripe.svg" width="60" />
-              Kavholm is a{' '}
+              This is a Proof Of Concept, to find out how to leverage {' '}
               <a className="stripe" href="https://stripe.com">
                 Stripe
               </a>{' '}
-              demo that uses{' '}
               <a href="https://stripe.com/connect" target="_blank">
                 Connect
               </a>{' '}
-              to build a global marketplace.{' '}
-              <a
-                className="github arrow"
-                href="https://github.com/stripe/stripe-demo-connect-kavholm-marketplace"
-                target="_blank"
-              >
-                View on GitHub
-              </a>
+              to build an ecosystem for Tour Management.{' '}
             </p>
           </div>
         </div>
@@ -64,7 +84,7 @@ class Home extends React.Component {
             font-size: 27px;
             font-weight: 600;
             color: #202020;
-            width: 70%;
+            width: 85%;
             margin-bottom: 30px;
           }
 
@@ -80,18 +100,24 @@ class Home extends React.Component {
                 rgba(255, 255, 255, 0) 50%,
                 #ffffff 100%
               ),
-              url(https://images.unsplash.com/photo-1542349301445-c5f6ec562729?ixlib=rb-1.2.1&auto=format&fit=crop&w=2315&q=80)
+              url(https://images.unsplash.com/photo-1570489679487-936e2897d793?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8bXVzaWMsYXJ0aXN0LGZlc3RpdmFsfHx8fHx8MTYyODQ5MTgxMA&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600)
                 no-repeat;
             background-size: cover;
             background-position: center center;
           }
 
+          .popover-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+          }
+
           .popover {
             padding: 20px;
+            margin: 20px;
             position: relative;
             width: 100%;
-
-            background: #ffffff;
+            background-color:rgba(255, 255, 255, 0.85);
             border: 0;
             box-shadow: 0 15px 35px 0 rgba(50, 50, 93, 0.1),
               0 5px 15px 0 rgba(0, 0, 0, 0.07);
@@ -99,10 +125,17 @@ class Home extends React.Component {
           }
 
           @media (min-width: 768px) {
+            .popover-wrapper {
+              flex-direction: row;
+            }
+          }
+
+          @media (min-width: 768px) {
             .popover {
+              margin: 0;
               padding: 40px;
-              width: 500px;
-              max-width: 500px;
+              width: 350px;
+              max-width: 350px;
             }
           }
           .booking-form {
@@ -146,7 +179,7 @@ class Home extends React.Component {
 
           @media (min-width: 768px) {
             .annotation {
-              max-width: 700px;
+              max-width: 800px;
               margin-left: auto;
               margin-right: auto;
               bottom: 30px;

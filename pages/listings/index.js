@@ -23,7 +23,9 @@ class Listings extends React.Component {
         title="Listings"
       >
         <div className="listings">
-          <ListingsList list={this.props.listings} />
+          <h1>Pay your suppliers</h1>
+          <ListingsList 
+            list={this.props.listings.filter(({authorId}) => this.props.userProfile?.userId ? authorId !== this.props.userProfile.userId : true)} />
 
           <style jsx>{`
             .listings {

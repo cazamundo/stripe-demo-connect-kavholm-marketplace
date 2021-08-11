@@ -48,7 +48,7 @@ class BookingPayment extends Component {
         .handleCardPayment(paymentRequestSecret)
         .then((payload) => {
           if (payload.error) {
-            logger.log('Booking failed.', payload.error);
+            logger.log('Payment failed.', payload.error);
             this.setState({
               error: `Payment failed: ${payload.error.message}`,
             });

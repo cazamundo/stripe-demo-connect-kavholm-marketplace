@@ -13,10 +13,10 @@ export default async (req, res) => {
     let listing = {...listingRaw};
 
     let lineItems = [
-      {item: 'Listing price', amount: listing.price.amount},
+      {item: 'Invoice price', amount: listing.price.amount},
       {
-        item: 'Marketplace fees (10%)',
-        amount: Math.ceil(listing.price.amount * 0.1),
+        item: 'Platform fees (1%)',
+        amount: Math.ceil(listing.price.amount * 0.01),
       },
     ];
 

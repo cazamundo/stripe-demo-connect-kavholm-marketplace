@@ -5,6 +5,9 @@ import logger from '../helpers/logger';
 import nextCookie from 'next-cookies';
 import Layout from '../components/layout';
 import cookie from 'js-cookie';
+import getConfig from "next/config";
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -28,7 +31,7 @@ export default class GlobalMarketplaceApp extends App {
 
   static async getInitialProps(appContext) {
     logger.log('*****************************');
-    logger.log('GlobalMarketplaceApp.app.ready');
+    logger.log('Lobbycall.app.ready');
     logger.log('*****************************');
 
     let {token, isAuthenticated} = this.getAuthenticationState(appContext);
@@ -69,8 +72,11 @@ export default class GlobalMarketplaceApp extends App {
       API.setToken(token);
     }
 
+    let stripePublicKey = getConfig().publicRuntimeConfig.stripe.publicKey;
+    const stripePromise = loadStripe(stripePublicKey);
+
     let renderProps = {...pageProps, token, isAuthenticated, userProfile};
 
-    return <Component {...renderProps} />;
+    return <Elements stripe={stripePromise}><Component {...renderProps} /></Elements>;
   }
 }

@@ -4,6 +4,17 @@ import logger from '../../../helpers/logger';
 
 import requireAuthEndpoint from '../../../utils/requireAuthEndpoint';
 
+let updateUserAccount = async (authenticatedUserId, stripeObject) => {
+
+  return storage
+    .get('users')
+    .find({userId: authenticatedUserId})
+    .assign({
+      stripe: stripeObject,
+    })
+    .write();
+};
+
 export default requireAuthEndpoint(async (req, res) => {
   let authenticatedUserId = req.authToken.userId;
 
@@ -14,13 +25,17 @@ export default requireAuthEndpoint(async (req, res) => {
       .find({userId: authenticatedUserId})
       .value();
 
-    if (!userAccount.stripeAccountID) {
-      throw new Error('No stripe account found');
-    }
+    // if (!userAccount.stripe) {
+    //   throw new Error('No stripe account found');
+    // }
 
     // 2) Call Stripe
     // let stripeUserId = userAccount.stripe.stripeUserId;
-    let stripeReq = await stripe.accounts.createLoginLink(userAccount.stripeAccountID);
+    let stripeReq = await stripe.accounts.retrieve(userAccount.stripeAccountID);
+
+    if (stripeReq.details_submitted) {
+      updateUserAccount(authenticatedUserId, {stripeUserId: stripeReq.id, ...stripeReq});
+    }
 
     // 3) Return url
     return res.status(200).json(stripeReq);

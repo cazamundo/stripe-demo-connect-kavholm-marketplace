@@ -50,21 +50,21 @@ export default requireAuthEndpoint(async (req, res) => {
   let authenticatedUserId = req.authToken.userId;
 
   try {
-    const {code} = req.body;
+    // const {code} = req.body;
 
-    // 1) Post the authorization code to Stripe to complete the Express onboarding flow
-    let stripeConnectRequest = await makeStripeConnectRequest(code);
+    // // 1) Post the authorization code to Stripe to complete the Express onboarding flow
+    // let stripeConnectRequest = await makeStripeConnectRequest(code);
 
-    console.log('stripeConnectRequest', stripeConnectRequest);
-    // 2) Update User account with StripeUserId
-    let stripeUserId = stripeConnectRequest.stripe_user_id;
+    // console.log('stripeConnectRequest', stripeConnectRequest);
+    // // 2) Update User account with StripeUserId
+    // let stripeUserId = stripeConnectRequest.stripe_user_id;
 
-    if (!stripeUserId) {
-      logger.log('StripeSetup.abort.no.stripeUserId');
-      return res.status(400).json({msg: 'Connect request to Stripe failed'});
-    }
+    // if (!stripeUserId) {
+    //   logger.log('StripeSetup.abort.no.stripeUserId');
+    //   return res.status(400).json({msg: 'Connect request to Stripe failed'});
+    // }
 
-    updateUserAccount(authenticatedUserId, stripeUserId);
+    // updateUserAccount(authenticatedUserId, stripeUserId);
 
     return res.status(200).json({status: 'ok'});
   } catch (err) {

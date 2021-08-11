@@ -74,7 +74,7 @@ class DashboardHeader extends Component {
                       (this.props.dashboardType == "renter" ? "active" : "")
                     }
                   >
-                    Your trips
+                    Suppliers paid
                   </a>
                 </Link>
               </li>
@@ -86,7 +86,7 @@ class DashboardHeader extends Component {
                       (this.props.dashboardType == "host" ? "active" : "")
                     }
                   >
-                    Your listings
+                    My payment requests
                   </a>
                 </Link>
               </li>

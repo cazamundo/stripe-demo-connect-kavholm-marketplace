@@ -38,9 +38,12 @@ export default requireAuthEndpoint(async (req, res) => {
       payment_method_types: ['card'],
       amount: amount,
       currency: currency,
+      // cfr https://stripe.com/docs/connect/creating-a-payments-page
+      // application_fee_amount: Math.ceil(amount * 0.01),
+      on_behalf_of: listingHostUserStripeUserId,
       transfer_data: {
         destination: listingHostUserStripeUserId,
-        amount: (amount - Math.ceil(amount * 0.1)),
+        amount: (amount - Math.ceil(amount * 0.01)),
       },
     };
 

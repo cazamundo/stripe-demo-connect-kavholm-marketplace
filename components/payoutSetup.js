@@ -10,11 +10,14 @@ class PayoutSetup extends Component {
   }
 
   async getRedirectInfo() {
-    return API.makeRequest("post", `/api/payouts/stripe`);
+    // return API.makeRequest("post", `/api/payouts/stripe`);
+    return API.makeRequest("post", '/api/payouts/onboard-user')
   }
 
   async handleConnect() {
     logger.log("ProfileStripe.handleConnect");
+    
+    // old (and new)
     let response = await this.getRedirectInfo();
     let url = response.location;
     if (url) {
@@ -29,9 +32,9 @@ class PayoutSetup extends Component {
       <>
         <div className="text-center box">
           <img src="/static/icon-bank.svg" className="icon" />
-          <h3>Set up payouts to list on Kavholm</h3>
+          <h3>Set up payouts to list your payments</h3>
           <p>
-            Kavholm partners with Stripe to transfer earnings to your bank
+            Lobbycall partners with Stripe to transfer earnings to your bank
             account.
           </p>
 

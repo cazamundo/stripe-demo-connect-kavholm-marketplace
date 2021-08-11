@@ -8,7 +8,7 @@ class BookingConfirmedModal extends Component {
         <img src="/static/confirmed.svg" width="50" />
         <h1>You’re all set!</h1>
         <Link href={'/transactions/' + this.props.transactionId}>
-          <a className="btn btn-primary">View booking details</a>
+          <a className="btn btn-primary">View payment details</a>
         </Link>
 
         <style jsx>{`

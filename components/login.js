@@ -16,8 +16,8 @@ class Login extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.loginAsRenter = this.loginAsRenter.bind(this);
-    this.loginAsSeller = this.loginAsSeller.bind(this);
+    this.loginAsTourManager = this.loginAsTourManager.bind(this);
+    this.loginAsSupplier = this.loginAsSupplier.bind(this);
   }
 
   handleChange(event) {
@@ -30,16 +30,16 @@ class Login extends Component {
     });
   }
 
-  loginAsRenter() {
+  loginAsTourManager() {
     this.setState({
-      email: 'renter@kavholm.com',
+      email: 'tourmanager@lobbycall.com',
       password: 'test',
     });
   }
 
-  loginAsSeller() {
+  loginAsSupplier() {
     this.setState({
-      email: 'owner@kavholm.com',
+      email: 'roadie@roadie.com',
       password: 'test',
     });
   }
@@ -86,16 +86,16 @@ class Login extends Component {
           <form onSubmit={this.handleSubmit}>
             <button
               className="btn btn-secondary btn-half"
-              onClick={this.loginAsRenter}
+              onClick={this.loginAsTourManager}
             >
-              Renter demo
+              Tour manager demo
             </button>
 
             <button
               className="btn btn-secondary btn-half right"
-              onClick={this.loginAsSeller}
+              onClick={this.loginAsSupplier}
             >
-              Owner demo
+              Supplier demo
             </button>
             <input
               className="icon-input new-section email"

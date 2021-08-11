@@ -28,15 +28,16 @@ class NewListing extends React.Component {
           <div className="splash-image">
             <div className="container">
               <div className="box popover">
-                <h3>Create new listing</h3>
+                <h3>Create new payment request</h3>
 
                 {isTestMode && (
                   <p>
-                    Creating new listings have been disabled as Kavholm runs in
+                    Creating new payment requests should be disabled as Lobbycall runs in
                     test-mode.
                   </p>
                 )}
-                {!isTestMode && <ListingForm />}
+                {/* {!isTestMode && <ListingForm />} */}
+                <ListingForm />
               </div>
             </div>
           </div>

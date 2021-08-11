@@ -12,7 +12,11 @@ module.exports = {
   },
 
   experimental: {publicDirectory: true},
-  serverRuntimeConfig: {},
+  serverRuntimeConfig: {
+    stripe: {
+      secretKey: process.env.STRIPE_SECRET_KEY
+    }
+  },
   publicRuntimeConfig: {
     stripe: {
       publicKey: process.env.STRIPE_PUBLIC_KEY,

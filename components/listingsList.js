@@ -20,6 +20,7 @@ function ListingsList(props) {
                 {<img src={l.image} />}
                 <div className="overlay" />
                 <h2>{l.location}</h2>
+                <h2>{l.location}</h2>
                 <h3>{l.title}</h3>
               </a>
             </Link>

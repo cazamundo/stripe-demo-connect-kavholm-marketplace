@@ -73,6 +73,37 @@ class Client {
     }
   }
 
+  async makeExternalRequest(method, requestUrl, data) {
+    this.detectContext();
+
+    let requestData = data || {};
+
+    logger.log('APIclient.makeRequest.requestUrl', requestUrl, this.token);
+    try {
+      const response = await fetch(requestUrl, {
+        headers: {
+          'content-type': method == 'post' ? 'application/json' : '',
+        },
+        method: method,
+        body: method == 'post' ? JSON.stringify(requestData) : null,
+      });
+
+      if (response.ok) {
+        return await response.json();
+      } else {
+        let body = await response.text();
+        logger.log(
+          'APIclient.makeRequest.response.notOkay',
+          response.statusText,
+          body,
+        );
+        throw new Error(response.statusText);
+      }
+    } catch (err) {
+      throw new Error(err);
+    }
+  }
+
   getBaseUrl() {
     return `${this.protocol}//${this.host}${this.port ? ':' + this.port : ''}`;
   }

@@ -14,6 +14,7 @@ class Listing extends React.Component {
     super();
     this.state = {
       isBooking: false,
+      bookingType: 'card',
       isBookingConfirmed: false,
       amount: 78600,
       transactionId: null,
@@ -37,6 +38,14 @@ class Listing extends React.Component {
   handleBookingStartClick = () => {
     this.setState({
       isBooking: true,
+      bookingType: 'card'
+    });
+  };
+
+  handleBookingWireTransferStartClick = () => {
+    this.setState({
+      isBooking: true,
+      bookingType: 'transfer'
     });
   };
 
@@ -62,18 +71,19 @@ class Listing extends React.Component {
         <div className="listings">
           <BookingModalWrapper
             isShown={this.state.isBooking}
+            bookingType={this.state.bookingType}
             onBookingConfirmed={this.onBookingConfirmed}
             isBookingConfirmed={this.state.isBookingConfirmed}
             transactionId={this.state.transactionId}
             listing={listing}
           />
-
+          
           <div className="content">
             <div className="row">
               <div className="col-12 order-2 col-lg-6 order-lg-1 pane-images">
                 <img src={this.props.listing.image} className="image-main" />
 
-                <div className="row">
+                {/* <div className="row">
                   <div className="col-6">
                     <img
                       src={this.props.listing.image2}
@@ -98,7 +108,7 @@ class Listing extends React.Component {
                       <img src="/static/save.svg" /> Save
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <div className="col-12 order-1 col-lg-6 order-lg-2 pane-info">
@@ -111,10 +121,10 @@ class Listing extends React.Component {
                         value={listing.totalAmount / 100}
                         displayType={'text'}
                         thousandSeparator={true}
-                        prefix={listing.price.currency + ''}
+                        prefix={listing.price.currency + ' '}
                       />
                     </span>
-                    <img className="stars" src="/static/stars.svg" />
+                    {/* <img className="stars" src="/static/stars.svg" /> */}
                   </div>
                   <p className="supporting-text">{listing.description}</p>
 
@@ -155,9 +165,18 @@ class Listing extends React.Component {
                     onClick={this.handleBookingStartClick}
                     disabled={!this.props.isAuthenticated}
                   >
-                    Book now
+                    Pay
                   </button>
                 )}
+                {/* {this.props.isAuthenticated && (
+                  <button
+                    className="btn btn-primary btn-book"
+                    onClick={this.handleBookingWireTransferStartClick}
+                    disabled={!this.props.isAuthenticated}
+                  >
+                    Pay now by wire transfer
+                  </button>
+                )} */}
 
                 {!this.props.isAuthenticated && (
                   <Link href="/login">
