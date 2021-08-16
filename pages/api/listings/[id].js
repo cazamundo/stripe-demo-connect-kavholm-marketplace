@@ -12,11 +12,13 @@ export default async (req, res) => {
 
     let listing = {...listingRaw};
 
+    const fee = Math.ceil(listing.price.amount * 0.04);
+
     let lineItems = [
       {item: 'Invoice price', amount: listing.price.amount},
       {
-        item: 'Platform fees (1%)',
-        amount: Math.ceil(listing.price.amount * 0.01),
+        item: 'Platform fees (4%)',
+        amount: fee,
       },
     ];
 
@@ -28,6 +30,7 @@ export default async (req, res) => {
 
     listing.lineItems = lineItems;
     listing.totalAmount = totalAmount;
+    listing.fee = fee
 
     if (listing.authorId) {
       try {

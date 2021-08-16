@@ -275,6 +275,406 @@
       "email": "jonathan.dierckens@gmail.com",
       "password": "$2b$10$fDU/gKP8pL5LeozB3WBodu/zJodwplgqqAk2xkMYavFGHCcJ0/IEi",
       "avatar": "//www.gravatar.com/avatar/d3e48ba0b077cedc28bab94ae88805dd?s=400"
+    },
+    {
+      "userId": "o4RJz8mrJ",
+      "firstName": "Test",
+      "lastName": "Account",
+      "email": "test@testaccount.be",
+      "password": "$2b$10$Apde8nZV82rnly5WMXTcQ.CsMXWvIHCeLaBYzwO9PmOKvRVlUQGqm",
+      "avatar": "//www.gravatar.com/avatar/fe1797fd2f720ff4877257adf92ac5fb?s=400",
+      "stripeAccountID": "acct_1JNCVRPtmvlUAvyR",
+      "stripe": {
+        "stripeUserId": "acct_1JNCVRPtmvlUAvyR",
+        "id": "acct_1JNCVRPtmvlUAvyR",
+        "object": "account",
+        "business_profile": {
+          "mcc": "7392",
+          "name": null,
+          "support_address": null,
+          "support_email": null,
+          "support_phone": null,
+          "support_url": null,
+          "url": "https://whateversite.be"
+        },
+        "capabilities": {
+          "bancontact_payments": "active",
+          "card_payments": "active",
+          "eps_payments": "active",
+          "giropay_payments": "active",
+          "ideal_payments": "active",
+          "p24_payments": "active",
+          "sepa_debit_payments": "active",
+          "sofort_payments": "active",
+          "transfers": "active"
+        },
+        "charges_enabled": true,
+        "country": "BE",
+        "created": 1628669386,
+        "default_currency": "eur",
+        "details_submitted": true,
+        "email": null,
+        "external_accounts": {
+          "object": "list",
+          "data": [
+            {
+              "id": "ba_1JNCWuPtmvlUAvyRko2FGGzP",
+              "object": "bank_account",
+              "account": "acct_1JNCVRPtmvlUAvyR",
+              "account_holder_name": null,
+              "account_holder_type": null,
+              "account_type": null,
+              "available_payout_methods": [
+                "standard"
+              ],
+              "bank_name": "STRIPE TEST BANK",
+              "country": "BE",
+              "currency": "eur",
+              "default_for_currency": true,
+              "fingerprint": "4zSayX5gN3WIVwsq",
+              "last4": "7061",
+              "metadata": {},
+              "routing_number": "110000000",
+              "status": "new"
+            }
+          ],
+          "has_more": false,
+          "total_count": 1,
+          "url": "/v1/accounts/acct_1JNCVRPtmvlUAvyR/external_accounts"
+        },
+        "login_links": {
+          "object": "list",
+          "total_count": 0,
+          "has_more": false,
+          "url": "/v1/accounts/acct_1JNCVRPtmvlUAvyR/login_links",
+          "data": []
+        },
+        "metadata": {},
+        "payouts_enabled": true,
+        "requirements": {
+          "current_deadline": null,
+          "currently_due": [],
+          "disabled_reason": null,
+          "errors": [],
+          "eventually_due": [],
+          "past_due": [],
+          "pending_verification": []
+        },
+        "settings": {
+          "bacs_debit_payments": {},
+          "branding": {
+            "icon": null,
+            "logo": null,
+            "primary_color": null,
+            "secondary_color": null
+          },
+          "card_issuing": {
+            "tos_acceptance": {
+              "date": null,
+              "ip": null
+            }
+          },
+          "card_payments": {
+            "decline_on": {
+              "avs_failure": false,
+              "cvc_failure": false
+            },
+            "statement_descriptor_prefix": null
+          },
+          "dashboard": {
+            "display_name": "whateversite.be",
+            "timezone": "Etc/UTC"
+          },
+          "payments": {
+            "statement_descriptor": "WHATEVERSITE.BE",
+            "statement_descriptor_kana": null,
+            "statement_descriptor_kanji": null
+          },
+          "payouts": {
+            "debit_negative_balances": true,
+            "schedule": {
+              "delay_days": 7,
+              "interval": "daily"
+            },
+            "statement_descriptor": null
+          },
+          "sepa_debit_payments": {}
+        },
+        "tos_acceptance": {
+          "date": 1628669509
+        },
+        "type": "express"
+      }
+    },
+    {
+      "userId": "ZUItX9kdU",
+      "firstName": "Tourmanager",
+      "lastName": "X",
+      "email": "tourmanagerx@l.com",
+      "password": "$2b$10$YrdzbiuvlcH0KJUAY2YDrO9Y1mNXtdU5j/3kfAcHf9bmnWAOg16uC",
+      "avatar": "//www.gravatar.com/avatar/b2375b41defa581b7b06e8d39d685e70?s=400",
+      "stripeAccountID": "acct_1JNGAEPtrXNBTPg4",
+      "stripe": {
+        "stripeUserId": "acct_1JNGAEPtrXNBTPg4",
+        "id": "acct_1JNGAEPtrXNBTPg4",
+        "object": "account",
+        "business_profile": {
+          "mcc": "7392",
+          "name": null,
+          "support_address": null,
+          "support_email": null,
+          "support_phone": null,
+          "support_url": null,
+          "url": "https://whateversite2.be"
+        },
+        "capabilities": {
+          "bancontact_payments": "active",
+          "card_payments": "active",
+          "eps_payments": "active",
+          "giropay_payments": "active",
+          "ideal_payments": "active",
+          "p24_payments": "active",
+          "sepa_debit_payments": "active",
+          "sofort_payments": "active",
+          "transfers": "active"
+        },
+        "charges_enabled": true,
+        "country": "BE",
+        "created": 1628683446,
+        "default_currency": "eur",
+        "details_submitted": true,
+        "email": null,
+        "external_accounts": {
+          "object": "list",
+          "data": [
+            {
+              "id": "ba_1JNGCZPtrXNBTPg4l1NaG46R",
+              "object": "bank_account",
+              "account": "acct_1JNGAEPtrXNBTPg4",
+              "account_holder_name": null,
+              "account_holder_type": null,
+              "account_type": null,
+              "available_payout_methods": [
+                "standard"
+              ],
+              "bank_name": "STRIPE TEST BANK",
+              "country": "BE",
+              "currency": "eur",
+              "default_for_currency": true,
+              "fingerprint": "4zSayX5gN3WIVwsq",
+              "last4": "7061",
+              "metadata": {},
+              "routing_number": "110000000",
+              "status": "new"
+            }
+          ],
+          "has_more": false,
+          "total_count": 1,
+          "url": "/v1/accounts/acct_1JNGAEPtrXNBTPg4/external_accounts"
+        },
+        "login_links": {
+          "object": "list",
+          "total_count": 0,
+          "has_more": false,
+          "url": "/v1/accounts/acct_1JNGAEPtrXNBTPg4/login_links",
+          "data": []
+        },
+        "metadata": {},
+        "payouts_enabled": true,
+        "requirements": {
+          "current_deadline": null,
+          "currently_due": [],
+          "disabled_reason": null,
+          "errors": [],
+          "eventually_due": [],
+          "past_due": [],
+          "pending_verification": []
+        },
+        "settings": {
+          "bacs_debit_payments": {},
+          "branding": {
+            "icon": null,
+            "logo": null,
+            "primary_color": null,
+            "secondary_color": null
+          },
+          "card_issuing": {
+            "tos_acceptance": {
+              "date": null,
+              "ip": null
+            }
+          },
+          "card_payments": {
+            "decline_on": {
+              "avs_failure": false,
+              "cvc_failure": false
+            },
+            "statement_descriptor_prefix": null
+          },
+          "dashboard": {
+            "display_name": "whateversite2.be",
+            "timezone": "Etc/UTC"
+          },
+          "payments": {
+            "statement_descriptor": "WHATEVERSITE2.BE",
+            "statement_descriptor_kana": null,
+            "statement_descriptor_kanji": null
+          },
+          "payouts": {
+            "debit_negative_balances": true,
+            "schedule": {
+              "delay_days": 7,
+              "interval": "daily"
+            },
+            "statement_descriptor": null
+          },
+          "sepa_debit_payments": {}
+        },
+        "tos_acceptance": {
+          "date": 1628684107
+        },
+        "type": "express"
+      }
+    },
+    {
+      "userId": "ZfBBmdmhB",
+      "firstName": "nieuw",
+      "lastName": "nieuw",
+      "email": "nieuw@nieuw.com",
+      "password": "$2b$10$lG0Xez34JkZ3impWIsGIfevQZbrCHktVc1Rng5TLyW.0LtohkgTWO",
+      "avatar": "//www.gravatar.com/avatar/77438e79e02fe00e2169dff346c4f230?s=400",
+      "stripeAccountID": "acct_1JNyyvQ7FrjdpMjJ",
+      "stripe": {
+        "stripeUserId": "acct_1JNyyvQ7FrjdpMjJ",
+        "id": "acct_1JNyyvQ7FrjdpMjJ",
+        "object": "account",
+        "business_profile": {
+          "mcc": "5691",
+          "name": "Nieuw",
+          "support_address": null,
+          "support_email": null,
+          "support_phone": null,
+          "support_url": null,
+          "url": "https://nieuw.com"
+        },
+        "capabilities": {
+          "bancontact_payments": "active",
+          "card_payments": "active",
+          "eps_payments": "active",
+          "giropay_payments": "active",
+          "ideal_payments": "active",
+          "p24_payments": "active",
+          "sepa_debit_payments": "active",
+          "sofort_payments": "active",
+          "transfers": "active"
+        },
+        "charges_enabled": true,
+        "country": "US",
+        "created": 1628855725,
+        "default_currency": "usd",
+        "details_submitted": true,
+        "email": null,
+        "external_accounts": {
+          "object": "list",
+          "data": [
+            {
+              "id": "ba_1JNz1lQ7FrjdpMjJnNtT1A5i",
+              "object": "bank_account",
+              "account": "acct_1JNyyvQ7FrjdpMjJ",
+              "account_holder_name": null,
+              "account_holder_type": null,
+              "account_type": null,
+              "available_payout_methods": [
+                "standard"
+              ],
+              "bank_name": "STRIPE TEST BANK",
+              "country": "US",
+              "currency": "usd",
+              "default_for_currency": true,
+              "fingerprint": "b6QDA2O0RasiH6S9",
+              "last4": "6789",
+              "metadata": {},
+              "routing_number": "110000000",
+              "status": "new"
+            }
+          ],
+          "has_more": false,
+          "total_count": 1,
+          "url": "/v1/accounts/acct_1JNyyvQ7FrjdpMjJ/external_accounts"
+        },
+        "login_links": {
+          "object": "list",
+          "total_count": 0,
+          "has_more": false,
+          "url": "/v1/accounts/acct_1JNyyvQ7FrjdpMjJ/login_links",
+          "data": []
+        },
+        "metadata": {},
+        "payouts_enabled": true,
+        "requirements": {
+          "current_deadline": 1631447936,
+          "currently_due": [
+            "person_4JNz0b00BoWfpbUf.address.line1"
+          ],
+          "disabled_reason": null,
+          "errors": [
+            {
+              "code": "invalid_street_address",
+              "reason": "The provided street address cannot be found. Please verify the street name and number are correct in \"4 Bailey Avenue \"",
+              "requirement": "person_4JNz0b00BoWfpbUf.address.line1"
+            }
+          ],
+          "eventually_due": [
+            "person_4JNz0b00BoWfpbUf.address.line1"
+          ],
+          "past_due": [],
+          "pending_verification": []
+        },
+        "settings": {
+          "bacs_debit_payments": {},
+          "branding": {
+            "icon": null,
+            "logo": null,
+            "primary_color": null,
+            "secondary_color": null
+          },
+          "card_issuing": {
+            "tos_acceptance": {
+              "date": null,
+              "ip": null
+            }
+          },
+          "card_payments": {
+            "decline_on": {
+              "avs_failure": false,
+              "cvc_failure": false
+            },
+            "statement_descriptor_prefix": null
+          },
+          "dashboard": {
+            "display_name": "Nieuw",
+            "timezone": "Etc/UTC"
+          },
+          "payments": {
+            "statement_descriptor": "NIEUW.COM",
+            "statement_descriptor_kana": null,
+            "statement_descriptor_kanji": null
+          },
+          "payouts": {
+            "debit_negative_balances": true,
+            "schedule": {
+              "delay_days": 2,
+              "interval": "daily"
+            },
+            "statement_descriptor": null
+          },
+          "sepa_debit_payments": {}
+        },
+        "tos_acceptance": {
+          "date": 1628856054
+        },
+        "type": "express"
+      }
     }
   ],
   "listings": [
@@ -409,6 +809,42 @@
         "amount": 68045,
         "currency": "USD"
       }
+    },
+    {
+      "id": "x7a-D_cxd",
+      "authorId": "o4RJz8mrJ",
+      "description": "The invoice details should come here.",
+      "title": "Hours worked setting up new festival deals",
+      "location": "Belgium",
+      "image": "https://images.unsplash.com/photo-1548140268-f68be9dbc187?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNTIzMTR8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Mjg2Njk1NjU&ixlib=rb-1.2.1&q=80&w=400",
+      "price": {
+        "amount": 120000,
+        "currency": "EUR"
+      }
+    },
+    {
+      "id": "GqDcpm9Yq",
+      "authorId": "o4RJz8mrJ",
+      "description": "The invoice details should come here.",
+      "title": "Hotel Radisson: 5 nights with crew",
+      "location": "Belgium",
+      "image": "https://images.unsplash.com/photo-1572532344703-4291841aa13c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNTIzMTR8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Mjg2NzA4NDI&ixlib=rb-1.2.1&q=80&w=400",
+      "price": {
+        "amount": 10000000,
+        "currency": "EUR"
+      }
+    },
+    {
+      "id": "ipFXPQqxA",
+      "authorId": "ZUItX9kdU",
+      "description": "The invoice details should come here.",
+      "title": "Invoice US Tour",
+      "location": "Belgium",
+      "image": "https://images.unsplash.com/photo-1549047266-8d18e5f0e064?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyNTIzMTR8MHwxfHJhbmRvbXx8fHx8fHx8fDE2Mjg2ODQxNTQ&ixlib=rb-1.2.1&q=80&w=400",
+      "price": {
+        "amount": 60000,
+        "currency": "EUR"
+      }
     }
   ],
   "transactions": [
@@ -507,6 +943,54 @@
       "totalAmount": "20246",
       "currency": "EUR",
       "paymentId": "pi_3JMqOyLut043p84g0BnwKe6j"
+    },
+    {
+      "id": "ZVQBr6R5g",
+      "listingId": "x7a-D_cxd",
+      "bookingUserId": "Igj-hMfQb",
+      "totalAmount": "121200",
+      "currency": "EUR",
+      "paymentId": "pi_3JNCZ9Lut043p84g1dt8aqWR"
+    },
+    {
+      "id": "7lp20mUND",
+      "listingId": "x7a-D_cxd",
+      "bookingUserId": "Igj-hMfQb",
+      "totalAmount": "121200",
+      "currency": "EUR",
+      "paymentId": "pi_3JNCnPLut043p84g1gx06Fek"
+    },
+    {
+      "id": "lrDDBQV4H",
+      "listingId": "x7a-D_cxd",
+      "bookingUserId": "Igj-hMfQb",
+      "totalAmount": "121200",
+      "currency": "EUR",
+      "paymentId": "pi_3JNCnkLut043p84g0ny9rYxD"
+    },
+    {
+      "id": "0zo8n4m4X",
+      "listingId": "x7a-D_cxd",
+      "bookingUserId": "Igj-hMfQb",
+      "totalAmount": "123600",
+      "currency": "EUR",
+      "paymentId": "pi_3JNCqsLut043p84g1NGM4hXn"
+    },
+    {
+      "id": "ieMsQwJFN",
+      "listingId": "GqDcpm9Yq",
+      "bookingUserId": "Igj-hMfQb",
+      "totalAmount": "10400000",
+      "currency": "EUR",
+      "paymentId": "pi_3JNCtNLut043p84g0BeZWuUu"
+    },
+    {
+      "id": "0aniE4vMu",
+      "listingId": "ipFXPQqxA",
+      "bookingUserId": "Igj-hMfQb",
+      "totalAmount": "62400",
+      "currency": "EUR",
+      "paymentId": "pi_3JNGVnLut043p84g14YaD80n"
     }
   ]
 }
